@@ -99,18 +99,21 @@ body {
         .carousel-container {
             width: 100%;
             overflow: hidden;
-            height: 500px;
+            height: 700px;
+            object-position: center;
  
         }
         .carousel {
             display: flex;
             width: 300%; 
             animation: slide 25s ease-in-out infinite;
+            align-items: center;
         }
         
         .carousel img {
             width: 70%;
-            object-fit: cover;
+            object-fit: contain;
+            height: 100%;
         }
 
         @keyframes slide {
@@ -305,6 +308,7 @@ body {
             border-radius: 5px;
             font-weight: bold;
             cursor: pointer;
+            font-family: 'Bestigia', sans-serif;
           }
           
           .form .btn:hover {
