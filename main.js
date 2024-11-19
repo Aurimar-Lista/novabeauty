@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (productElement) {
             const id = productElement.getAttribute('data-id');
             window.location.href = `producto.html?id=${id}`;
-        
         }
     });
 });
