@@ -210,18 +210,19 @@ body {
                 text-align: center;
                 align-items: center;
                 padding: 20px;
+                max-width: 800px;
             }
-            .our-story .imagen {
+            .our-story .image {
                 flex: 1;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-            .our-story .imagen img {
+            .our-story .image img {
                 width: 100%;
-                max-width: 400px;
+                max-width: 600px;
                 object-fit: cover;
-                border-radius: 8px;
+                min-width: 350px;
             }
 
     .shop {

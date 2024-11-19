@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const productElement = event.target.closest('.product');
         if (productElement) {
             const id = productElement.getAttribute('data-id');
-            window.location.href = `novabeauty/producto.html?id=${id}`;
+            window.location.href = `/producto.html?id=${id}`;
         }
     });
 });
