@@ -28,17 +28,56 @@
       </section>
     </section>
 
-    <!-- <section class="carousel-container">
-      <div class="carousel">
-        <img src="public/crema-arriba.jpg" alt="Crema">
-        <img src="public/protector-solar-arriba.jpg" alt="Protector Solar">
-        <img src="public/serum-arriba.jpg" alt="Serum">
-      </div>
-    </section> -->
+    <section id="product-main">
+      <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          const productId = params.get('id');
 
+          if (productId) {
+            fetch('/data.json')
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Error al cargar los productos');
+                }
+                return response.json();
+              })
+              .then(data => {
+                const product = data.products.find(p => p.id == productId);
+                if (product){
+
+                  const productSection = document.getElementById('product-main');
+                  const productContainer = document.createElement('div');
+                  productContainer.classList.add('product-main');
+                  
+                  productContainer.innerHTML = `
+                  <div class="product" data-id="${product.id}">
+                    <img alt="${product.name}"  src="${product.image}" width="600"/>
+                    <div class="text">
+                      <h2>${product.name}</h2>
+                      <p class="precio">$${product.price}</p>
+                    </div>
+                  </div>
+                    `;
+
+                    productSection.appendChild(productContainer);
+                    
+                  }
+                  else {
+                    console.error('Producto no encontrado.');
+                  }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              })
+          }
+        });
+      </script>
+    </section>
+  
     <!-- <section>
-      <div class="service-menu">
-        <h2>NUESTRO COMPROMISO</h2>
+      <div class="product-caracteristics">
+        <h2>Características</h2>
 
         <div class="icons">
           <div>
@@ -61,116 +100,46 @@
       </div>
     </section> -->
 
-    <section id="our-story">
-      <!-- <div class="product" data-id="1">
-        <img alt="Crema contorno de ojos" height="200" src="public/crema-1.jpg" width="200"/>
-        <h3> Contorno de Ojos Regenerador</h3>
-        <p class="precio">$700.00</p>
-      </div> -->
-      <script type="module">
-        import { products } from './data.js';
-        
-        document.addEventListener('DOMContentLoaded', () => {
-          const params = new URLSearchParams(window.location.search);
-          const productId = params.get('id');
 
-          if (productId) {
-            fetch('/data.json')
-              .then(response => {
-                if (!response.ok) {
-                  throw new Error('Error al cargar los productos');
-                }
-                return response.json();
-              })
-              .then(data => {
-                const product = data.products.find(p => p.id == productId);
-                if (product){
-
-                  const productSection = document.getElementById('our-story');
-                  const productContainer = document.createElement('div');
-                  productContainer.classList.add('our-story');
-                  
-                  productContainer.innerHTML = `
-                  <div class="product" data-id="${product.id}">
-                    <img alt="${product.name}"  src="${product.image}" width="600"/>
-                    <h3>${product.name}</h3>
-                    <p class="precio">${product.price}</p>
-                    </div>
-                    `;
-
-                    productSection.appendChild(productContainer);
-                    
-                  }
-                  else {
-                    console.error('Producto no encontrado.');
-                  }
-              })
-              .catch(error => {
-                console.error('Error:', error);
-              })
-
-
-            /* document.getElementById('product-description').innerText = `Mostrando detalles para el producto con ID: ${productId}`;
-            document.getElementById('product-name').innerText = products.find(product => product.id === parseInt(productId)).name;
-          } else {
-            document.getElementById('product-description').innerText = 'No se proporcionó un ID de producto.'; */
-          }
-        });
-      </script>
-
-
-
-    </section>
-  
-    <!-- <section id="products">
+    <section id="products">
       <div class="shop">
         <h2>PRODUCTOS</h2>
         <div class="products">
-          <div class="product" data-id="1">
-            <img alt="Crema contorno de ojos" height="200" src="public/crema-1.jpg" width="200"/>
-            <h3> Contorno de Ojos Regenerador</h3>
-            <p class="precio">$700.00</p>
-          </div>
-          <div class="product" data-id="2">
-            <img alt="Protector Solar" height="200" src="public/protector-solar.jpg" width="200"/>
-            <h3>Protector Solar</h3>
-            <p class="precio"><del>$900.00</del>$800.00</p>
-          </div>
-          <div class="product" data-id="3">
-            <img alt="Crema Hidratante Nutritiva de Día" height="200" src="public/crema-2.jpg" width="200"/>
-            <h3>Crema Hidratante Nutritiva de Día</h3>
-            <p class="precio">$650.00</p>
-          </div>
-          <div class="product" data-id="4">
-            <img alt="Sérum" height="200" src="public/serum.jpg" width="200"/>
-            <h3> Sérum Equilibrante </h3>
-            <p class="precio"> $1500.00</p>
-          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          const productId = parseInt(params.get('id'));
+
+            fetch('/data.json')
+              .then(response => response.json())
+              .then(data => {
+                const products = data.products;
+
+                const filteredProducts = products.filter(product => product.id !== productId);
+
+                filteredProducts.forEach(product => {
+  
+                    const productElement = document.createElement('div');
+                    productElement.classList.add('product');
+                    productElement.setAttribute('data-id', product.id);
+
+                    productElement.innerHTML = `
+                      <a href="/producto.html?id=${product.id}"></a>
+                      <img alt="${product.name}" height="200" src="${product.image}" width="200"/>
+                      <h3>${product.name}</h3>
+                      <p class="precio">$${product.price}</p>
+                      `;
+
+                    document.querySelector('.products').appendChild(productElement);
+                
+                });
+              })});
+          </script>
         </div>
         <a class="btn" href="#">COMPRAR</a>
       </div>
-    </section> -->
+    </section>
 
-  <!-- <section id="form">
-    <div class="form">
-      <h2>Contáctanos</h2>
-      <form action="#" method="post">
-        <div class="form-group">
-          <label for="nombre"><strong>Nombre:</strong></label>
-          <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
-      </div>
-      <div class="form-group">
-        <label for="email"><strong>Correo electrónico:</strong></label>
-        <input type="email" id="email" name="email" placeholder="Escribe tu correo" required>
-      </div>
-      <div class="form-group">
-        <label for="comentario"><strong>Comentario:</strong></label>
-        <textarea id="Comentario" name="Comentario" placeholder="Escribe tu comentario" rows="4" required></textarea>
-      </div>
-        <button type="submit" class="btn">ENVIAR</button>
-      </form>
-    </div>
-  </section> -->
-
+  
  </body>
 </html>
