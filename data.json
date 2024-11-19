@@ -1,28 +1,4 @@
-$(document).ready(function() {
-    var altura = $('.menu').offset().top;
-    /* alert(altura); */
-
-    $(window).on('scroll', function() {
-        if ($(window).scrollTop() > altura) {
-            $('.menu').addClass('menu-fixed');
-        } else {
-            $('.menu').removeClass('menu-fixed');
-        }
-    })
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-    const productos = document.querySelectorAll('.product');
-
-    productos.forEach(producto => {
-        producto.addEventListener('click', () => {
-            const id = producto.getAttribute('data-id');
-            window.location.href = `/producto.html?id=${id}`;
-        });
-    });
-});
-
-/* const productsData = {
+{
     "products": [
         {
             "id": 1,
@@ -54,6 +30,4 @@ document.addEventListener('DOMContentLoaded', () => {
             "image": "public/serum.jpg"
         }
     ]
-};
-
-export default productsData; */
+}

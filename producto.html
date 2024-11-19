@@ -20,23 +20,23 @@
         </div>
 
         <div class="menu" id="menu">
-          <a href="#topheader" class="btn">Inicio</a>
-          <a href="#our-story" class="btn">Beneficios</a>
-          <a href="#products" class="btn">Productos</a>
-          <a href="#form" class="btn">Contacto</a>
+          <a href="/index.html#topheader" class="btn">Inicio</a>
+          <a href="/index.html#our-story" class="btn">Beneficios</a>
+          <a href="/index.html#products" class="btn">Productos</a>
+          <a href="/index.html#form" class="btn">Contacto</a>
         </div>
       </section>
     </section>
 
-    <section class="carousel-container">
+    <!-- <section class="carousel-container">
       <div class="carousel">
         <img src="public/crema-arriba.jpg" alt="Crema">
         <img src="public/protector-solar-arriba.jpg" alt="Protector Solar">
         <img src="public/serum-arriba.jpg" alt="Serum">
       </div>
-    </section>
+    </section> -->
 
-    <section>
+    <!-- <section>
       <div class="service-menu">
         <h2>NUESTRO COMPROMISO</h2>
 
@@ -59,21 +59,70 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="our-story">
-      <div class="our-story">
-        <img alt="Jojoba" height="400" src="public/jojoba.jpg" width="600"/>
-        <div class="text">
-          <h2>Beneficios del Aceite de Jojoba</h2>
-          <p>
-            El aceite de jojoba penetra muy bien en la piel, tiene propiedades antioxidantes y se lo considera un producto muy valioso para prevenir las arrugas y neutralizar los radicales libres. También se recomienda mucho como remedio para el acné y para tratar pieles grasas y sensibles. Entre sus múltiples beneficios, restaura el equilibrio de la piel y cabello por su elevado contenido de ceramidas y contribuye a controlar la producción de sebo y humedad. Devuelve flexibilidad, suavidad y brillo tanto a la piel como al cabello. Al proteger el envejecimiento y mantener la hidratación, tiene un efecto rejuvenecedor de la piel, suavizando arrugas, mejorando la elasticidad y la firmeza de la piel.
-          </p>
-        </div>
-      </div>
+      <!-- <div class="product" data-id="1">
+        <img alt="Crema contorno de ojos" height="200" src="public/crema-1.jpg" width="200"/>
+        <h3> Contorno de Ojos Regenerador</h3>
+        <p class="precio">$700.00</p>
+      </div> -->
+      <script type="module">
+        import { products } from './data.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          const productId = params.get('id');
+
+          if (productId) {
+            fetch('/data.json')
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error('Error al cargar los productos');
+                }
+                return response.json();
+              })
+              .then(data => {
+                const product = data.products.find(p => p.id == productId);
+                if (product){
+
+                  const productSection = document.getElementById('our-story');
+                  const productContainer = document.createElement('div');
+                  productContainer.classList.add('our-story');
+                  
+                  productContainer.innerHTML = `
+                  <div class="product" data-id="${product.id}">
+                    <img alt="${product.name}"  src="${product.image}" width="600"/>
+                    <h3>${product.name}</h3>
+                    <p class="precio">${product.price}</p>
+                    </div>
+                    `;
+
+                    productSection.appendChild(productContainer);
+                    
+                  }
+                  else {
+                    console.error('Producto no encontrado.');
+                  }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              })
+
+
+            /* document.getElementById('product-description').innerText = `Mostrando detalles para el producto con ID: ${productId}`;
+            document.getElementById('product-name').innerText = products.find(product => product.id === parseInt(productId)).name;
+          } else {
+            document.getElementById('product-description').innerText = 'No se proporcionó un ID de producto.'; */
+          }
+        });
+      </script>
+
+
+
     </section>
   
-    <section id="products">
+    <!-- <section id="products">
       <div class="shop">
         <h2>PRODUCTOS</h2>
         <div class="products">
@@ -100,9 +149,9 @@
         </div>
         <a class="btn" href="#">COMPRAR</a>
       </div>
-    </section>
+    </section> -->
 
-  <section id="form">
+  <!-- <section id="form">
     <div class="form">
       <h2>Contáctanos</h2>
       <form action="#" method="post">
@@ -121,7 +170,7 @@
         <button type="submit" class="btn">ENVIAR</button>
       </form>
     </div>
-  </section>
+  </section> -->
 
  </body>
 </html>
