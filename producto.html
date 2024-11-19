@@ -52,10 +52,12 @@
                   
                   productContainer.innerHTML = `
                   <div class="product" data-id="${product.id}">
-                    <img alt="${product.name}"  src="${product.image}" width="600"/>
                     <div class="text">
                       <h2>${product.name}</h2>
                       <p class="precio">$${product.price}</p>
+                    </div>
+                    <div class="imagen">
+                      <img alt="${product.name}"  src="${product.image}" width="600"/>
                     </div>
                   </div>
                     `;
