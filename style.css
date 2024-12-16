@@ -347,55 +347,70 @@ body {
             color: #00818D;
           }
 
-          .product-main {
-            display: flex;
+          #product-main {
+            background-color: #CBE7D3;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: justify;
             align-items: center;
             justify-content: center;
-            padding: 50px 20px;
-            background-color: #CBE7D3;
+          }
+          
+          .product-title h2 {
+            font-family: 'Lucida Bright', serif;
+            font-size: 36px;
+            color: #00818D;
+            margin-bottom: 30px;
+            text-align: center;
+          }
+          
+          .product-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
             gap: 20px;
-            }
-            
-            .product-main h2 {
-                font-family: 'Lucida Bright', serif;
-                font-size: 32px;
-                margin-bottom: 20px;
-                color: #00818D;
-            }
-            .product-main p {
-                font-size: 25px;
-                margin-bottom: 20px;
-                color: #70a78d;
-            }
-
-            .product-main .product {
-                display: flex;
-                flex: 1;
-                padding: 10px;
-                gap: 20px;
-                max-width: 800px;
-            }
-            .product-main .text {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                align-items: center;
-                padding: 20px;
-            }
-            .product-main .imagen {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .product-main .imagen img {
-                width: 100%;
-                max-width: 400px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
+          }
+          
+          .product-col {
+            flex: 1;
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+          }
+          
+          .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+          }
+          
+          .product-benefits ul,
+          .product-ingredients ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+          }
+          
+          .product-benefits h3,
+          .product-usage h3,
+          .product-ingredients h3 {
+            color: #00818D;
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          
+          .price {
+            font-size: 24px;
+            color: #70a78d;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+          }
 
 
 

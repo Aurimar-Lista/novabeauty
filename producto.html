@@ -33,44 +33,64 @@
         document.addEventListener('DOMContentLoaded', () => {
           const params = new URLSearchParams(window.location.search);
           const productId = params.get('id');
-
+    
           if (productId) {
             fetch('data.json')
-              .then(response => {
+              .then((response) => {
                 if (!response.ok) {
                   throw new Error('Error al cargar los productos');
                 }
                 return response.json();
               })
-              .then(data => {
-                const product = data.products.find(p => p.id == productId);
-                if (product){
-
+              .then((data) => {
+                const product = data.products.find((p) => p.id == productId);
+                if (product) {
                   const productSection = document.getElementById('product-main');
-                  const productContainer = document.createElement('div');
-                  productContainer.classList.add('product-main');
-                  
-                  productContainer.innerHTML = `
-                    <div class="product" data-id="${product.id}">
-                      <div class="text">
-                        <h2>${product.name}</h2>
-                        ${product.price2 ? `<p class="precio"><del>$${product.price2}</del> $${product.price}</p>` : `<p class="precio">$${product.price}</p>`}
+    
+                  productSection.innerHTML = `
+                    <!-- Título centrado -->
+                    <div class="product-title">
+                      <h2>${product.name}</h2>
+                    </div>
+    
+                    <!-- Fila 1: Descripción | Imagen | Beneficios -->
+                    <div class="product-row">
+                      <div class="product-col product-description">
+                        <p>${product.description}</p>
+                        <p class="price">$${product.price}</p>
                       </div>
-                      <div class="imagen">
-                        <img alt="${product.name}" src="${product.image}" width="600"/>
+                      <div class="product-col product-image">
+                        <img src="${product.image}" alt="${product.name}" />
+                      </div>
+                      <div class="product-col product-benefits">
+                        <h3>Beneficios</h3>
+                        <ul>
+                          ${product.beneficios.map((beneficio) => `<li>${beneficio}</li>`).join('')}
+                        </ul>
+                      </div>
+                    </div>
+    
+                    <!-- Fila 2: Modo de Uso | Ingredientes -->
+                    <div class="product-row">
+                      <div class="product-col product-usage">
+                        <h3>Modo de Uso</h3>
+                        <p>${product.modo_de_uso}</p>
+                      </div>
+                      <div class="product-col product-ingredients">
+                        <h3>Ingredientes</h3>
+                        <ul>
+                          ${product.ingredientes.map((ingrediente) => `<li>${ingrediente}</li>`).join('')}
+                        </ul>
                       </div>
                     </div>
                   `;
-
-                    productSection.appendChild(productContainer);
-                  }
-                  else {
-                    console.error('Producto no encontrado.');
-                  }
+                } else {
+                  productSection.innerHTML = '<p>Producto no encontrado.</p>';
+                }
               })
-              .catch(error => {
+              .catch((error) => {
                 console.error('Error:', error);
-              })
+              });
           }
         });
       </script>

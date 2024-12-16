@@ -1,33 +1,107 @@
 {
     "products": [
-        {
-            "id": 1,
-            "name": "Contorno de Ojos Regenerador",
-            "price": "700.00",
-            "description": "Contorno de Ojos Regenerador",
-            "image": "public/crema-1.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Protector Solar",
-            "price2": "900.00",
-            "price": "800.00",
-            "description": "Protector Solar",
-            "image": "public/protector-solar.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Crema Hidratante Nutritiva de Día",
-            "price": "650.00",
-            "description": "Crema Hidratante Nutritiva de Día",
-            "image": "public/crema-2.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Sérum Equilibrante",
-            "price": "1500.00",
-            "description": "Sérum Equilibrante",
-            "image": "public/serum.jpg"
-        }
+      {
+        "id": 1,
+        "name": "Contorno de Ojos Regenerador",
+        "price": "700.00",
+        "description": "El contorno de ojos regenerador Nova Beauty, con aceite de jojoba brinda a la delicada piel de la esta zona, hidratación, nutrición y reparación. Ideal para todo tipo de piel.",
+        "beneficios": [
+          "Despierta la mirada.",
+          "Previene y repara el envejecimiento de la piel de la zona.",
+          "Corrige la expresión cansada, revitalizando la mirada.",
+          "Reafirma la piel."
+        ],
+        "modo_de_uso": "Aplicar sobre la piel limpia del contorno de ojos, esparcirlo con suaves masajes hasta su total absorción. Te recomendamos previamente higienizar tus manos y limpiar la zona de aplicación, ya sea lavándola o mediante tu rutina de limpieza facial.",
+        "ingredientes": [
+          "Aqua (agua)",
+          "Manteca de karité",
+          "Vitamina E",
+          "Ginkgo biloba",
+          "Aceite de semilla de simmondsia chinensis (jojoba)",
+          "Aceite de almendra dulce",
+          "Alcanos de coco",
+          "Aceite de semilla de adansonia digitata",
+          "Aceite de grano de argania spinosa"
+        ],
+        "image": "public/crema-1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Protector Solar",
+        "price": "800.00",
+        "description": "El protector solar 50+SPF de Nova Beauty, es ideal para hidratar la piel y protegerla de los daños causados por los rayos solares, su fórmula con aceite de jojoba, vitamina E, y pantenol, previene el envejecimiento prematuro de la piel, la combinación de los filtros solares actúan como una barrera protectora ante los rayos UV que producen las quemaduras solares.",
+        "beneficios": [
+          "Barrera protectora de los rayos UV.",
+          "Factor protección solar 50+.",
+          "Previene el envejecimiento prematuro de la piel.",
+          "Hidrata y protege la piel de los daños solares."
+        ],
+        "modo_de_uso": "Aplicar sobre la piel dos veces en la mañana o más según necesidad, en caso de contacto con el agua o sudoración excesiva aplicar nuevamente.",
+        "ingredientes": [
+          "Aqua (agua)",
+          "Vitamina E (tocopheryl acetate)",
+          "Aceite de semilla de simmondsia chinensis (jojoba)",
+          "Pantenol (Panthenol vitamina B5)",
+          "Aloe vera (Aloe barbadensis leaf extract)"
+        ],
+        "image": "public/protector-solar.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Crema Hidratante Nutritiva de Día",
+        "price": "650.00",
+        "description": "La crema hidratante nutritiva día de Nova Beauty, es elaborada a base de aceite de jojoba y extracto de té verde, con vitamina E. Contiene además aloe vera, que contribuye al cuidado diario de la piel manteniendo y mejorando el nivel de hidratación y protección solar naturales hasta 24hs después de su aplicación. Su formula es apta para todo tipo de piel.",
+        "beneficios": [
+          "Logra una piel suave y luminosa.",
+          "Aumenta la hidratación cutánea.",
+          "Libre de parabenos."
+        ],
+        "modo_de_uso": "Aplicar después de limpiar la piel del rostro y cuello, esparciendo hasta su total absorción, con movimientos circulares ascendentes.",
+        "ingredientes": [
+          "Agua (aqua)",
+          "Extracto acuoso de té verde (Camellia sinensis leaf extract)",
+          "Aceite de jojoba (Simmondsia chinensis seed oil)",
+          "Glicerina vegetal (glycerin)",
+          "Alcohol cetoestearílico (cetearyl alcohol)",
+          "Aloe vera (Aloe barbadensis leaf extract)",
+          "Cocato de sacarosa (sucrose cocoate)",
+          "Fenoxietanol (phenoxyethanol)",
+          "Aceite esencial de salvia (Salvia sclarea essential oil)",
+          "Aceite esencial de coriandro (Coriandrum sativum essential oil)",
+          "Óxido de zinc (zinc oxide)",
+          "Alcohol bencílico (bencyl alcohol)",
+          "Ácido cítrico (citric acid)",
+          "Vitamina E (tocopheryl acetate)"
+        ],
+        "image": "public/crema-2.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Sérum Equilibrante",
+        "price": "1500.00",
+        "description": "El sérum equilibrante de Nova Beauty, es elaborado con aceite de jojoba 100% orgánico. Rico en vitamina A, D Y E. Ayuda a equilibrar los niveles de grasa y humedad de la piel. Suaviza arrugas y manchas, emparejando así el tono de piel y dándole luminosidad. Es recomendado para todo tipo de piel porque no engrasa, al ser la jojoba un aceite seco. Bueno para dermatitis y eczemas.",
+        "beneficios": [
+          "Restaura la piel de los daños causados por el estrés y la contaminación diaria.",
+          "Perfecto para aplicar por la mañana y noche.",
+          "Piel suave y luminosa."
+        ],
+        "modo_de_uso": "Colocar unas 3 o 4 gotas del sérum directamente sobre la piel del rostro, cuello y escote hasta su total absorción. Higienizar previamente tus manos y limpiar la zona de aplicación, ya sea lavándola o mediante tu rutina de limpieza facial. Una vez absorbido, aplica crema hidratante. Recomendamos comenzar con una aplicación semanal, para ir aumentando progresivamente a 2 o 3 aplicaciones semanales, pudiendo luego pasar a una aplicación diaria en caso de necesidad y buena tolerancia dérmica.",
+        "ingredientes": [
+          "Water (agua)",
+          "Aceite de jojoba (Simmondsia chinensis seed oil)",
+          "Niacinamide (vitamina B3)",
+          "Glycerin (glicerina vegetal)",
+          "Algae (fucus) Extract (extracto de algas marinas)",
+          "Aloe barbadensis Extract (extracto de aloe vera orgánico)",
+          "Phenoxyethanol",
+          "Xantham Gum (goma xántica)",
+          "Zinc gluconate",
+          "Panthenol (vitamina B5)",
+          "Caprylyl Glycol (and) Hydrolyzed Wheat Protein (and) Hydrolyzed Soy Protein (and) Pectin (and) Arginine (and) Proline (and) Serine (and) Butylene Glycol (and) Glucose (and) Chondrus Crispus Extract (and) Tocopherol",
+          "Sodium Hyluronate (ácido hialurónico)"
+        ],
+        "image": "public/serum.jpg"
+      }
     ]
-}
+  }
+  
